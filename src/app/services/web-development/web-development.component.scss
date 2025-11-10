@@ -1,0 +1,621 @@
+/* Import a font that looks similar (optional) */
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:host {
+  /* Define colors */
+  --primary-red: #D90A0A;
+  --text-dark: #333333;
+  --text-light: #555555;
+  --text-heading: #000000;
+  --background-white: #FFFFFF;
+}
+
+.seo-page-wrapper {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* --- Block 1: Page Header --- */
+.page-header {
+  background-color: var(--background-white);
+  padding: 60px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.page-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 20px;
+}
+
+.breadcrumb {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center; /* This does the horizontal centering */
+  align-items: center;     /* This centers items vertically (optional) */
+  gap: 10px;               /* Adds space between items (optional) */
+  padding: 15px 0;
+}
+
+.breadcrumb a {
+  color: var(--primary-red);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+}
+
+.breadcrumb a:hover {
+  color: #a00707;
+}
+
+.breadcrumb-separator {
+  margin: 0 10px;
+  color: var(--text-light);
+}
+
+.breadcrumb-current {
+  color: var(--text-light);
+}
+
+.page-description {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  max-width: 850px; /* Constrain description width */
+  margin: 0 auto;
+}
+
+/* --- Block 2: SEO Details --- */
+.seo-details {
+  padding: 80px 0;
+  background-color: var(--background-white);
+}
+
+.two-column-layout {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* --- Left Column --- */
+.image-column {
+  flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis */
+  text-align: center;
+}
+
+.image-column img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* The image in the screenshot has soft corners */
+}
+
+/* --- Right Column --- */
+.info-column {
+  flex: 1 1 55%;
+}
+
+.sub-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between each step */
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start; /* Aligns icon to the top of the text */
+  gap: 20px;
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-top: 5px; /* Small adjustment */
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  margin: 0 0 8px 0;
+}
+
+.step-description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .two-column-layout {
+    flex-direction: column; /* Stack columns */
+  }
+
+  .image-column {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .page-description {
+    font-size: 0.95rem;
+  }
+}
+:host {
+  /* Define colors from the screenshots */
+  --primary-red: #D90A0A;
+  --text-dark: #333333;
+  --text-light: #555555;
+  --border-color: #E0E0E0;
+}
+
+.benefits-section {
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Header Styles --- */
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+  padding-bottom: 20px;
+  /* This creates the full-width line from the screenshot */
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* --- Grid Styles --- */
+.benefits-grid {
+  display: grid;
+  /* Create 3 equal-width columns */
+  grid-template-columns: repeat(3, 1fr);
+  /* Gap between rows (60px) and columns (30px) */
+  gap: 60px 30px;
+  margin-top: 50px;
+}
+
+/* --- Card Styles --- */
+.benefit-item {
+  text-align: left;
+}
+
+.benefit-icon {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.benefit-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  margin-bottom: 10px;
+}
+
+.benefit-description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* --- Responsive Design --- */
+
+/* On tablets, switch to 2 columns */
+@media (max-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* On mobile, stack to 1 column */
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 40px; /* Single gap for stacked items */
+  }
+}
+:host {
+  /* Define colors */
+  --primary-red: #D90A0A;
+  --text-dark: #333333;
+  --text-light: #555555;
+  //--background-light-gray: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Section 1: Why Choose Us --- */
+.why-choose-section {
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 80px 0;
+ // background-color: #fff;
+}
+
+.two-column-layout {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.text-column {
+  flex: 1 1 55%; /* Takes up 55% of the width */
+}
+
+.image-column {
+  flex: 1 1 45%; /* Takes up 45% of the width */
+  text-align: center;
+}
+
+.image-column img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* --- Section 2: SEO Tools --- */
+.seo-tools-section {
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 60px 0;
+  background-color: var(--background-light-gray);
+}
+
+.section-title-centered {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tools-grid {
+  display: grid;
+  /* Creates 4 equal columns */
+  grid-template-columns: repeat(4, 1fr);
+  /* Space between logos */
+  gap: 40px 30px;
+  align-items: center;
+  justify-items: center;
+}
+
+.tool-logo img {
+  max-height: 45px; /* Keeps logos consistent */
+  width: auto;
+  object-fit: contain;
+  /* Replicates the faded look */
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.tool-logo img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* --- Responsive Design --- */
+
+@media (max-width: 992px) {
+  /* Stack the logo grid into 2 columns */
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack the "Why Choose Us" section */
+  .two-column-layout {
+    flex-direction: column;
+  }
+
+  .image-column {
+    margin-top: 40px;
+  }
+}
+:host {
+  /* Define colors */
+  --primary-red: #D90A0A;
+  --text-dark: #333333;
+  --text-light: #555555;
+  --border-color: #E0E0E0;
+  --background-light: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- 1. SERVICES SECTION --- */
+
+.services-section {
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.service-card {
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.view-all-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-view-all {
+  background-color: var(--primary-red);
+  color: #fff;
+  border: none;
+  padding: 14px 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-view-all:hover {
+  background-color: #b00808;
+  transform: scale(1.03);
+}
+
+/* --- 2. FAQ'S SECTION --- */
+
+.faq-section {
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.section-title-faq {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Gap between columns */
+}
+
+.faq-item {
+  background-color: var(--background-light);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden; /* For the animation */
+  /* This is needed because gap doesn't apply to rows in grid */
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.faq-icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--text-light);
+  border-right: 2px solid var(--text-light);
+  transform: rotate(45deg); /* Down arrow */
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(-135deg); /* Up arrow */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.faq-answer p {
+  padding: 0 25px 25px 25px;
+  margin: 0;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px; /* Adjust as needed */
+  transition: max-height 0.5s ease-in;
+}
+
+
+/* --- RESPONSIVE DESIGN --- */
+
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+:host {
+  /* Define colors from the screenshot */
+  --brand-red: #EA0000; /* A bright red to match the image */
+  --text-white: #FFFFFF;
+  --button-text: #333333;
+}
+
+.cta-banner {
+  background-color: var(--brand-red);
+  padding: 25px 40px;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cta-text {
+  color: var(--text-white);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.cta-button {
+  /* Button Styling */
+  background-color: var(--text-white);
+  color: var(--button-text);
+  padding: 16px 35px;
+  border-radius: 50px; /* Creates the pill shape */
+
+  /* Text & Link Styling */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap; /* Prevents text from wrapping */
+
+  /* Effects */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .cta-container {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 20px; /* Add space between text and button */
+    text-align: center;
+  }
+
+  .cta-text {
+    font-size: 1.3rem;
+  }
+}

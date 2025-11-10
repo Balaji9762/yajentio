@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+
+<!-- src/app/components/news/news.component.html -->
+<div class="news-container" *ngIf="newsList.length > 0">
+  <div class="news-card" *ngFor="let item of newsList">
+    <img [src]="item.n_image_url" alt="{{ item.n_name }}">
+    <h3>{{ item.n_name }}</h3>
+    <p>{{ item.n_time | date: 'longDate' }}</p>
+    <a [routerLink]="item.n_link">Read more</a>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

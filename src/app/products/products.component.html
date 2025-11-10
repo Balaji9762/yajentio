@@ -1,0 +1,32 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+
+<div class="course-list-container">
+  <div class="header">
+    <h1>Courses</h1>
+    <nav>
+      <a href="#">Home</a> » <a href="#">Courses</a>
+    </nav>
+  </div>
+
+  <div class="course-list">
+    <div class="course-item" *ngFor="let course of courses">
+      <img [src]="course.imageUrl" [alt]="course.name">
+      <h3>{{ course.name }}</h3>
+      <div class="course-details">
+        <p><i class="fa fa-graduation-cap"></i> Duration: {{ course.duration }}</p>
+        <p><i class="fa fa-rupee"></i> Fee: {{ course.fee }}</p>
+      </div>
+      <div class="course-rating">
+        <span *ngFor="let i of [].constructor(course.rating)">
+          <i class="fa fa-star"></i>
+        </span>
+        <span>{{ course.rating }} | {{ course.responses }} Responses</span>
+      </div>
+      <button class="read-more-button">Read More</button>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

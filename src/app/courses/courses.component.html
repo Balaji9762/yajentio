@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div class="course-container">
+  <div class="course-card" *ngFor="let course of courses" (click)="viewCourse(course?.course_name)">
+    <img [src]="course.course_image_url" alt="{{ course.course_name }}" class="course-image" />
+    <h3>{{ course.course_name }}</h3>
+    <p>{{ course.course_overview | slice:0:150 }}...</p>
+  </div>
+</div>
+
+<!-- Courses Table -->
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 custom-table">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="course_id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="border-right"> ID </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{ element.course_id }} </td>
+    </ng-container>
+
+    <!-- Course Name -->
+    <ng-container matColumnDef="course_name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="border-right"> Course Name </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{ element.course_name }} </td>
+    </ng-container>
+
+    <!-- Start Date -->
+    <ng-container matColumnDef="start_date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="border-right"> Start Date </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{ element.start_date }} </td>
+    </ng-container>
+
+    <!-- Time -->
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="border-right"> Time </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{ element.timing }} </td>
+    </ng-container>
+
+    <!-- Description -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="border-right"> Description </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{ element.description || 'N/A' }} </td>
+    </ng-container>
+
+    <!-- Platform -->
+    <ng-container matColumnDef="platform">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="border-right"> Platform </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{ element.platform }} </td>
+    </ng-container>
+
+    <!-- Course Link Column -->
+    <ng-container matColumnDef="course_link">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="border-right"> Course Link </th>
+      <td mat-cell *matCellDef="let element" class="border-right">
+        <a [routerLink]="['/course-detail', element.course_name]" class="course-link">View Course</a>
+
+      </td>
+    </ng-container>
+
+    <!-- Table Header & Rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20,25]" showFirstLastButtons></mat-paginator>
+</div>
+<app-chat-box></app-chat-box>
+<app-banner></app-banner>
+<app-footer></app-footer>

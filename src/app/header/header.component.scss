@@ -1,0 +1,408 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Banner Container */
+.banner-container {
+  background: linear-gradient(90deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%);
+  padding: 1rem 2rem;
+  color: #fff;
+}
+.banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.logo img {
+  height: 60px;
+  width: auto;
+}
+.training-info {
+  flex-grow: 1;
+  text-align: center;
+  min-width: 250px;
+}
+.academy-name {
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+.training-tagline {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: 0.15rem;
+}
+.social-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 180px;
+}
+.social-icons {
+  margin-bottom: 0.3rem;
+}
+.social-icons a {
+  color: #fff;
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #ffe600;
+}
+.contact-info {
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.contact-info i {
+  color: #25D366; /* WhatsApp Green */
+  font-size: 1.1rem;
+}
+
+
+/* Message Board */
+.message-board {
+  background-color: #ffc107;
+  color: #212529;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  max-width: 1200px;
+  margin: 0.3rem auto;
+  padding: 0.3rem 1rem;
+  border-radius: 3px;
+  overflow: hidden;
+  align-items: center;
+}
+.message-label {
+  border-right: 2px solid #212529;
+  padding-right: 1rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+/* Marquee text */
+.message-content marquee {
+  width: 100%;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+
+/* Navbar */
+.custom-navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+/* Container inside navbar */
+.custom-navbar .container {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Collapse wrapper flex fix */
+.collapse.navbar-collapse {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Nav menus and auth sections aligned right */
+.navbar-nav.me-auto {
+  margin-left: auto !important;  /* push the menu to the right */
+  margin-right: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Authentication section aligned right and last */
+.navbar-nav.ms-auto.auth-section {
+  margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Nav links */
+.navbar-nav .nav-link {
+  color: #212529;
+  padding: 0.5rem 0.8rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #0052D4;
+  text-decoration: none;
+}
+
+
+
+/* User dropdown */
+.user-dropdown .user-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #212529;
+  font-weight: 600;
+  cursor: pointer;
+}
+.user-email {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+}
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
+
+/* Auth links */
+.auth-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+.auth-link i {
+  font-size: 1rem;
+}
+
+/* Navbar toggler visible on smaller screens */
+.navbar-toggler {
+  border: none;
+  background: none;
+}
+.navbar-toggler-icon {
+  width: 30px;
+  height: 3px;
+  background-color: #212529;
+  display: block;
+  position: relative;
+}
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: #212529;
+  position: absolute;
+  left: 0;
+}
+.navbar-toggler-icon::before {
+  top: -8px;
+}
+.navbar-toggler-icon::after {
+  bottom: -8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .banner-content {
+    justify-content: center;
+    text-align: center;
+  }
+  .banner-content > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .social-info {
+    align-items: center !important;
+    margin-top: 0.8rem;
+  }
+  .collapse.navbar-collapse {
+    flex-direction: column;
+    gap: 0;
+  }
+  .navbar-nav.me-auto,
+  .navbar-nav.ms-auto.auth-section {
+    margin: 0;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+  }
+  .nav-item.dropdown:hover > .dropdown-menu {
+    display: none; /* disable hover dropdown on small screens */
+  }
+  .nav-item.dropdown .dropdown-menu {
+    position: static;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+  }
+  .dropdown-item {
+    padding-left: 2rem;
+  }
+}
+/* Navbar collapse container - flex layout */
+.collapse.navbar-collapse {
+  display: flex !important;
+  justify-content: flex-end; /* align content to right */
+  align-items: center;
+  gap: 2rem; /* spacing between main nav and auth */
+  width: 100%;
+}
+
+/* Main navigation menu */
+.navbar-nav.main-nav {
+  margin-left: auto !important; /* push main nav to right */
+  margin-right: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Authentication menu next to main menu */
+.navbar-nav.auth-section {
+  margin-left: 0; /* no extra margin */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Nav links */
+.navbar-nav .nav-link {
+  color: #212529;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #0052D4;
+  text-decoration: none;
+}
+
+/*
+ * 1. Style the main dropdown container
+ */
+.dropdown-menu {
+  /* Increase the width to fit your grid. Adjust this value as needed! */
+  width: 100px;
+
+  /* --- This is the most important part --- */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* This creates 3 equal columns */
+  gap: 10px; /* This adds space between your items */
+  /* --- End of grid setup --- */
+
+  padding: 10px; /* Add some space around the edges */
+  border-radius: 10px; /* Make the corners rounded */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add a modern shadow */
+  border: none; /* Remove the default Bootstrap border */
+  list-style: none; /* Remove the default list bullets (if any) */
+  left: 100%;
+  transform: translateX(-100%);
+}
+
+/*
+ * 2. Style each item inside the grid (the <a> tag)
+ */
+.dropdown-item.dropdown-with-icon {
+  /* Use flexbox to stack the icon and text vertically */
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  align-items: center;    /* Center horizontally */
+  justify-content: center;  /* Center vertically */
+
+  padding: 10px 10px;
+  border-radius: 5px;
+  transition: background-color 0.1s ease;
+  color: #333; /* Darker text color */
+  text-decoration: none;
+  text-align: center;
+
+  /* Override Bootstrap's default item styles */
+  white-space: normal; /* Allow text to wrap */
+  width: auto; /* Let the grid control the width */
+}
+
+/*
+ * 3. Add a hover effect for the items
+ */
+.dropdown-item.dropdown-with-icon:hover,
+.dropdown-item.dropdown-with-icon:focus {
+  background-color: #f8f9fa; /* A light grey hover effect */
+  color: #000;
+}
+
+/*
+ * 4. Style your submenu icon
+ */
+.submenu-icon {
+  width: 30px;  /* Set a fixed size */
+  height: 30px;
+  margin-bottom: 10px; /* Space between icon and text */
+  object-fit: contain;
+}
+
+/*
+ * 5. Style your submenu text
+ */
+.dropdown-item.dropdown-with-icon span {
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+}
+
+/*
+ * NEW RULE: Show the dropdown on hover
+ */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: grid; /* Makes the hidden menu appear */
+  grid-template-columns: repeat(3, 1fr); /* Arranges it into 3 columns */
+}
+/*
+ * 1. Style the main dropdown container (NOW HIDDEN BY DEFAULT)
+ */
+.dropdown-menu {
+  /* --- HIDES THE MENU --- */
+  display: none;
+  /* --- END OF CHANGE --- */
+
+  /* Your other styles from before */
+  left: 70%;
+  transform: translateX(-70%);
+  width: 600px;
+  /* We will use grid in the hover rule */
+  gap: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+  border: none;
+  list-style: none;
+  margin-top: 0;
+}

@@ -1,0 +1,199 @@
+<app-header></app-header>
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Side: Image -->
+      <div class="col-lg-6 text-center">
+        <img src="assets/images/home/home.png" alt="Hero Image" class="hero-img">
+      </div>
+
+      <!-- Right Side: Text Content -->
+      <div class="col-lg-6">
+        <h1 class="hero-title">{{ heroData.title }}</h1>
+        <p class="hero-subtitle">{{ heroData.subtitle }}</p>
+
+        <div class="d-flex gap-3">
+          <a [href]="heroData.buttons.getStarted.link" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <i class="bi bi-fire"></i> {{ heroData.buttons.getStarted.text }}
+          </a>
+
+          <a [href]="heroData.buttons.watchVideo.link" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg">
+            <i class="bi bi-play-circle"></i> {{ heroData.buttons.watchVideo.text }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="digital-technologies">
+    <div class="container">
+      <h2 class="section-title">Our Digital Technologies</h2>
+      <p class="section-subtitle">
+        We simplify the most complex technological problems with ease and provide unique IT solutions for better performance of our clients.
+      </p>
+
+      <div class="row">
+        <div class="col-md-4" *ngFor="let service of services">
+          <div class="card service-card">
+            <div class="icon-container" [style.backgroundColor]="service.color">
+              <i class="bi" [ngClass]="service.icon"></i>
+            </div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="solutions-grid">
+    <div class="container">
+        <h1 class="section-title">Our Services</h1>
+        <div class="row g-4">
+            <!-- Single Vendor Application -->
+            <div class="col-md-4 col-lg-3">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <img src="assets/images/home/single.png" alt="Single Vendor Application Icon">
+                    </div>
+                    <h3 class="solution-title">Single Vendor Application</h3>
+                </div>
+            </div>
+
+            <!-- Multi-Vendor Application -->
+            <div class="col-md-4 col-lg-3">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <img src="assets/images/home/multi.png" alt="Multi-Vendor Application Icon">
+                    </div>
+                    <h3 class="solution-title">Multi-Vendor Application</h3>
+                </div>
+            </div>
+
+            <!-- WhatsApp Chatbots -->
+            <div class="col-md-4 col-lg-3">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <img src="assets/images/home/whatsap.png" alt="WhatsApp Chatbots Icon">
+                    </div>
+                    <h3 class="solution-title">WhatsApp Chatbots</h3>
+                </div>
+            </div>
+
+            <!-- Digital Marketing -->
+            <div class="col-md-4 col-lg-3">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <img src="assets/images/home/multi.png" alt="Digital Marketing Icon">
+                    </div>
+                    <h3 class="solution-title">Digital Marketing</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+  </section>
+  <section class="getting-started">
+    <div class="container">
+    <h1 class="section-title">Our Software Approach to Clients</h1>
+<p class="section-subtitle">
+    A Step by Step Guide to Setting Up a Project the Right Way from Start to finish the Project with Your of Choice of Multiple Designs and Development
+
+    image
+
+</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="number-badge">01</div>
+                    <h1 class="section-title">Getting Started Page</h1>
+                    <p class="section-description">
+                            Yajentio Software is a team of experienced professionals that provide
+                        original logo design, branding and templates. Our core expertise lies in
+                        designing a visually appealing logo and UI & UX for businesses.
+                    </p>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="bi bi-check-circle-fill feature-icon"></i>
+                            Unique Design
+                        </li>
+                        <li class="feature-item">
+                            <i class="bi bi-check-circle-fill feature-icon"></i>
+                            User Flow Design
+                        </li>
+                        <li class="feature-item">
+                            <i class="bi bi-check-circle-fill feature-icon"></i>
+                            Detailed Design Structure
+                        </li>
+                        <li class="feature-item">
+                            <i class="bi bi-check-circle-fill feature-icon"></i>
+                            Design with Coding Standards
+                        </li>
+                    </ul>
+                    <a href="/aboutus" class="read-more-btn">
+                        Read More
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="illustration-container">
+                        <img
+                            src="assets/images/home/feature2_agfa1l.png"
+                            alt="Getting Started Illustration"
+                            class="illustration"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="code-review-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="number-badge">02</div>
+                    <h1 class="section-title">Code Review</h1>
+                    <p class="section-description">
+                        With our software, you'll be able to automate tedious tasks so that you can
+                        focus on more important things! We offer custom solutions for companies
+                        who want to utilize their time more efficiently.
+                    </p>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="bi bi-check-circle-fill feature-icon"></i>
+                            Systematic Examination
+                        </li>
+                        <li class="feature-item">
+                            <i class="bi bi-check-circle-fill feature-icon"></i>
+                            Standard code
+                        </li>
+                        <li class="feature-item">
+                            <i class="bi bi-check-circle-fill feature-icon"></i>
+                            Resolve Errors
+                        </li>
+                        <li class="feature-item">
+                            <i class="bi bi-check-circle-fill feature-icon"></i>
+                            Professional Testing
+                        </li>
+                        <li class="feature-item">
+                            <i class="bi bi-check-circle-fill feature-icon"></i>
+                            Start Coding Format
+                        </li>
+                    </ul>
+                    <a href="/aboutus" class="read-more-btn">
+                        Read More
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="illustration-container">
+                        <img
+                            src="assets/images/home/feature4_gxdqes.png"
+                            alt="Code Review Illustration"
+                            class="illustration"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-chat-box></app-chat-box>
+<app-footer></app-footer>

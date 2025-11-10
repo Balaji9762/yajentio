@@ -1,0 +1,113 @@
+<app-header></app-header>
+
+<section class="hero-section">
+  <div class="wave-pattern"></div>
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+              <div class="hero-content">
+                  <h1 class="hero-title" data-aos="fade-up">About Us</h1>
+                  <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                      The Yajentio Software Story
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <img src="assets/images/aboutus/about-us-page.png" alt="" class="floating-illustration illustration-left" aria-hidden="true">
+  <img src="assets/images/aboutus/about.jpg" alt="" class="floating-illustration illustration-right" aria-hidden="true">
+</section>
+<div class="container">
+  <div class="text-content">
+    <div class="subtitle">{{subtitle}}</div>
+    <h1 class="title">{{ title }}</h1>
+    <p class="description">{{ description }}</p>
+    <p class="history">{{ historyText }}</p>
+    <p class="business">{{ businessText }}</p>
+  </div>
+  <div class="image-content">
+    <img [src]="imageUrl" alt="About Us Image">
+  </div>
+</div>
+<section class="business-section">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-6 illustration-container">
+              <img src="assets/images/aboutus/success-summary-img.png" alt="Business Analytics Illustration" class="illustration-img">
+          </div>
+          <div class="col-lg-6">
+              <h2 class="section-title">We Care About Your Business</h2>
+              <p class="section-subtitle">
+                  we assure you that advanced IT technology is made to appear simpler and by choosing us you choose you're success
+              </p>
+
+              <div class="feature-item">
+                  <div class="feature-icon icon-history">
+                      <i class="fas fa-phone"></i>
+                  </div>
+                  <h3 class="feature-title">Our History</h3>
+                  <p class="feature-description">
+                      Yajentio Software  Pvt Ltd Is One Of The Rapidly Growing Company Developed By The Experts Who Have Good Experience In Development And Designing Techniques.
+                  </p>
+              </div>
+
+              <div class="feature-item">
+                  <div class="feature-icon icon-mission">
+                      <i class="fas fa-gift"></i>
+                  </div>
+                  <h3 class="feature-title">Our Mission</h3>
+                  <p class="feature-description">
+                      Our Experts Believe In Serving The Best To Our Clients And Always Being Energized Towards Facing Challenges And Achieving Targets In Our Company.
+                  </p>
+              </div>
+
+              <div class="feature-item">
+                  <div class="feature-icon icon-vision">
+                      <i class="fas fa-code"></i>
+                  </div>
+                  <h3 class="feature-title">Our Vision</h3>
+                  <p class="feature-description">
+                      We Believe In Delivering The Best Service To Our Clients And Develop As A Best IT Service Provider And Provide Best To Clients By Accelerating Their Business With Our Services.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<div class="services-container">
+  <h2>{{mainTitle}}</h2>
+  <p class="main-description">{{mainDescription}}</p>
+  <div class="services-grid">
+    <div class="service-card" *ngFor="let service of services">
+      <div class="icon-container">
+        <img [src]="service.icon" alt="{{ service.title }} Icon">
+      </div>
+      <h3>{{ service.title }}</h3>
+      <p>{{ service.description }}</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="phone-section">
+    <img [src]="phoneImage" alt="Phone with App Previews" class="phone-image">
+  </div>
+
+  <div class="content-section">
+    <div class="download-app-button">Download App</div>
+    <h2>{{ title }}</h2>
+
+    <div class="store-buttons">
+      <a [href]="appleStoreLink" class="store-button">
+        <img [src]="appleStoreImage" alt="Download on the Apple Store">
+        <span>Download on the <br> Apple Store</span>
+      </a>
+      <a [href]="googlePlayLink" class="store-button">
+        <img [src]="googlePlayImage" alt="Get it on Google Play">
+        <span>Get it on <br> Google Play</span>
+      </a>
+    </div>
+  </div>
+</div>
+<app-chat-box></app-chat-box>
+<app-footer></app-footer>
+

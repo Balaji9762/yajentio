@@ -1,0 +1,100 @@
+<div class="billing-container">
+  <div class="content">
+    <h1>GST Billing Software for your Business</h1>
+    <p>Yajentio billing is all you need to manage customer invoices and billing.
+      Yajentio billing is designed and optimized for small and big-sized
+      organizations that want a low-cost billing solution. Whether you have a
+      small number of clients with a low transaction volume or a large number of
+      customers with a high transaction volume, Yajentio billing has
+      everything you need. Take the online video tour to see why Yajentio -
+      billing is the quickest, simplest, most cost-effective, and favoured billing
+      solution of businesses around the India.</p>
+  </div>
+  <div class="image-area">
+    <img src="../assets/products/billingsoftware/banners.png" alt="Billing Software" class="billing-image">
+  </div>
+  <div class="delivered-customers">
+    Delivered Customers: <span>{{ deliveredCustomers }}+</span>
+  </div>
+</div>
+<div class="gst-container">
+  <div class="image-area">
+    <img src="../assets/products/billingsoftware/make_gst_bills_and_share_with_your_customers.png" alt="Billing Software Mockup">
+  </div>
+  <div class="content">
+    <h1>Create GST Bills for customers and share them online</h1>
+    <p>With the GST billing features of Yajentio billing software, you can set up a professional brand name. You can make bills with the Yajentio accounting and billing app. It helps you follow Indian law about Goods and Service Tax. With the Yajentio billing, accounting is error-free. It helps make sure that your business's data is safe. Invoice formats in the Yajentio Billing make it easy to make GST invoices in just a few easy steps. The Yajentio Billing can be used both when you are online and when you are not.</p>
+  </div>
+</div>
+<div class="gst-filing-container">
+  <div class="text-content">
+    <h1>GST filing made simpler and faster</h1>
+    <p>With the GST billing features of Yajentio billing software, you can set up a professional brand name. You can make bills with the Yajentio accounting and billing app. It helps you follow Indian law about Goods and Service Tax. Using our easy-to-use billing software to meet GST requirements. The billing software from Yajentio billing software has a number of useful billing options. Invoices for your customers can be made in a few easy steps. You can also send them to customers via WhatsApp, email, or by printing them out. You can use your printer to print them billing size.</p>
+  </div>
+  <div class="image-container">
+    <img src="../assets/products/billingsoftware/gst_filing_made_simplerAndFaster.png" alt="GST Filing Illustration">
+  </div>
+</div>
+<div class="inventory-container">
+  <div class="image-area">
+    <img src="../assets/products/billingsoftware/check_inventory_instantly.png" alt="Inventory Illustration">
+  </div>
+  <div class="content">
+    <h1>Manage Inventory Seamlessly</h1>
+    <p>Yajentio billing has the best inventory management software with features that work amazingly well. It helps improve how well a business does. Using features of the Billing software like business reports, you can keep track of how much money your business makes. It will help you figure out how well you've managed your stock.</p>
+  </div>
+</div>
+<div class="features-container">
+  <h1>Features of GST Billing and Accounting Software</h1>
+  <p>Yajentio billing software is the best free software for GST billing. It has a number of useful features for billing and accounting. SMEs don't have to work hard to run their businesses when they use the app. With fully customised invoices that follow GST rules, your business can stand out from the rest.</p>
+
+  <div class="feature-buttons">
+    <button *ngFor="let feature of features" class="feature-button" [ngClass]="feature.class">
+      <i class="fas fa-check-circle"></i> {{ feature.name }}
+    </button>
+  </div>
+
+  <a href="/home" class="learn-more-button">
+    <i class="fas fa-list"></i> Learn More
+  </a>
+</div>
+
+<div class="support-banner">
+  <div class="decorative-elements">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+    <div class="cylinder cylinder-1"></div>
+    <div class="cylinder cylinder-2"></div>
+    <div class="triangle"></div>
+  </div>
+
+  <div class="content">
+    <h1 class="heading">We always try to be the best<br>support to you as possible</h1>
+
+    <div class="subscription-form">
+      <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()">
+        <input
+          type="email"
+          formControlName="email"
+          class="email-input"
+          placeholder="Enter your email">
+
+        <button type="submit" class="subscribe-button">
+          <i class="flame-icon"></i>
+          Subscribe Now
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<section class="client-logos">
+  <h2>Our Loving Clients</h2>
+  <div class="logo-grid">
+    <div class="logo-item" *ngFor="let client of clients">
+      <img [src]="client.logo" [alt]="client.name">
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
+

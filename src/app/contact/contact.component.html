@@ -1,0 +1,252 @@
+<app-header></app-header>
+<section class="hero-section">
+  <div class="wave-pattern"></div>
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+              <div class="hero-content">
+                  <h1 class="hero-title" data-aos="fade-up">Contact Us</h1>
+                  <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Drop us Message for any Query
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <img src="assets/images/contact/contact banner.jpg" alt="" class="floating-illustration illustration-right" aria-hidden="true">
+</section>
+<div class="form-container">
+  <div class="form-header">
+    <div class="title">
+      <span class="icon">✈</span> Course Enquiry Form
+    </div>
+    <button class="close-btn" (click)="onClose()">✕</button>
+  </div>
+
+  <!-- Success Message -->
+  <div class="alert alert-success" *ngIf="submitSuccess">
+    <div class="alert-icon">✓</div>
+    <div class="alert-content">
+      <div class="alert-title">Success!</div>
+      <div class="alert-message">Your enquiry has been submitted successfully. We'll get back to you soon.</div>
+    </div>
+    <button class="alert-close" (click)="submitSuccess = false">✕</button>
+  </div>
+
+  <!-- Error Message -->
+  <div class="alert alert-error" *ngIf="submitError">
+    <div class="alert-icon">⚠</div>
+    <div class="alert-content">
+      <div class="alert-title">Error</div>
+      <div class="alert-message">{{ errorMessage }}</div>
+    </div>
+    <button class="alert-close" (click)="submitError = false">✕</button>
+  </div>
+
+  <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()">
+    <div class="form-sections">
+      <!-- Contact Details Section -->
+      <div class="form-section">
+        <div class="section-header">
+          <span class="icon">📞</span> Contact <span class="highlight">Details</span>
+          <div class="underline"><div class="active-line"></div></div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Name <span class="required">*</span></label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            [ngClass]="{'invalid': hasError('name')}"
+          >
+          <div class="error-message" *ngIf="hasError('name')">
+            {{ getErrorMessage('name') }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNo">Phone No <span class="required">*</span></label>
+          <input
+            id="phone_no"
+            type="text"
+            formControlName="phone_no"
+            [ngClass]="{'invalid': hasError('phone_no')}"
+          >
+          <div class="error-message" *ngIf="hasError('phone_no')">
+            {{ getErrorMessage('phone_no') }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            [ngClass]="{'invalid': hasError('email')}"
+          >
+          <div class="error-message" *ngIf="hasError('email')">
+            {{ getErrorMessage('email') }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Details Section -->
+      <div class="form-section">
+        <div class="section-header">
+          <span class="icon">📚</span> Course <span class="highlight">Details</span>
+          <div class="underline"><div class="active-line"></div></div>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category <span class="required">*</span></label>
+          <select
+            id="category"
+            formControlName="category"
+            [ngClass]="{'invalid': hasError('category')}"
+          >
+            <option value="" disabled selected>Select</option>
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+          <div class="error-message" *ngIf="hasError('category')">
+            {{ getErrorMessage('category') }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course <span class="required">*</span></label>
+          <input
+            id="course"
+            type="text"
+            formControlName="course"
+            [ngClass]="{'invalid': hasError('course')}"
+          >
+          <div class="error-message" *ngIf="hasError('course')">
+            {{ getErrorMessage('course') }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="other_courses">Other Courses</label>
+          <input id="other_courses" type="text" formControlName="other_courses">
+        </div>
+      </div>
+    </div>
+
+    <!-- More Details Section -->
+    <div class="form-section">
+      <div class="section-header">
+        <span class="icon">📍</span> More <span class="highlight">Details</span>
+        <div class="underline"><div class="active-line"></div></div>
+      </div>
+
+      <div class="form-group">
+        <label for="training_type">Training Type <span class="required">*</span></label>
+        <select
+          id="training_type"
+          formControlName="training_type"
+          [ngClass]="{'invalid': hasError('training_type')}"
+        >
+          <option *ngFor="let type of training_types" [value]="type">{{ type }}</option>
+        </select>
+        <div class="error-message" *ngIf="hasError('training_type')">
+          {{ getErrorMessage('training_type') }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="preferred_city">Preferred City <span class="required">*</span></label>
+        <select
+          id="preferred_city"
+          formControlName="preferred_city"
+          [ngClass]="{'invalid': hasError('preferred_city')}"
+        >
+          <option value="" disabled selected>Select</option>
+          <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+        </select>
+        <div class="error-message" *ngIf="hasError('preferred_city')">
+          {{ getErrorMessage('preferred_city') }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Message Section -->
+    <div class="form-section">
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          formControlName="message"
+          rows="4"
+          [ngClass]="{'invalid': hasError('message')}"
+        ></textarea>
+        <div class="note">Note: Maximum 300 Characters only allowed...</div>
+        <div class="error-message" *ngIf="hasError('message')">
+          {{ getErrorMessage('message') }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Replace the reCAPTCHA placeholder with this -->
+<div class="recaptcha-container">
+  <div
+    appRecaptcha
+    [siteKey]="recaptchaSiteKey"
+    (captchaResponse)="onCaptchaResolved($event)"
+    (captchaExpired)="onCaptchaExpired()"
+  ></div>
+  <div class="error-message" *ngIf="submitError && !recaptchaToken">
+    Please complete the reCAPTCHA verification
+  </div>
+  <!-- For testing purposes, you can add a note that reCAPTCHA is optional during development -->
+  <div class="note">Note: reCAPTCHA is optional during development</div>
+</div>
+
+    <!-- Terms and Conditions -->
+    <div class="terms-container">
+      <div class="checkbox">
+        <input
+          type="checkbox"
+          id="acceptTerms"
+          formControlName="acceptTerms"
+          [ngClass]="{'invalid': hasError('acceptTerms')}"
+        >
+        <label for="acceptTerms">I accept all <a href="#">Terms & Conditions</a>.</label>
+      </div>
+      <div class="error-message" *ngIf="hasError('acceptTerms')">
+        {{ getErrorMessage('acceptTerms') }}
+      </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+
+      <button type="submit" class="submit-btn" [disabled]="isSubmitting">
+        <span *ngIf="!isSubmitting">📨 Send Enquiry</span>
+        <span *ngIf="isSubmitting" class="loading-spinner"></span>
+        <span *ngIf="isSubmitting">Submitting...</span>
+      </button>
+    </div>
+  </form>
+</div>
+<div class="contact-container">
+  <h3>Contact us by Phone Number or Email Address</h3>
+  <div class="phone-number">
+    +91 8925132650
+  </div>
+  <div class="or">OR</div>
+  <div class="email">
+    smarttrainer&#64;yajentiotrainingacademy.com
+     <!-- supportit&#64;yajentio.com -->
+  </div>
+  <div class="social-icons">
+    <a href="http://twitter.com/yajntiotrainingacademy" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="http://youtube.com/yajentio" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="http://www.facebook.com/yajentiotrainingacademy" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="http://linkdin.com/yajentiotrainingacademy" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="http://instagram.com/yajentiotrainingacademy" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+<app-chat-box></app-chat-box>
+<app-footer></app-footer>

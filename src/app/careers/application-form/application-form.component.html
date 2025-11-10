@@ -1,0 +1,185 @@
+<app-header></app-header>
+
+
+  <h1 class="heading">Please Fill the Following For Applying Job</h1>
+
+  <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()" class="application-form">
+    <!-- Basic Information -->
+    <div class="form-row">
+      <div class="form-group">
+        <input
+          type="text"
+          formControlName="enter_your_name"
+          placeholder="Enter Your Name *"
+          [class.error]="applicationForm.get('enter_your_name')?.touched && applicationForm.get('enter_your_name')?.invalid"
+        >
+        <div class="error-message" *ngIf="applicationForm.get('enter_your_name')?.touched && applicationForm.get('enter_your_name')?.invalid">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="tel"
+          formControlName="enter_phone_number"
+          placeholder="Enter Your Phone Number *"
+          [class.error]="applicationForm.get('enter_phone_number')?.touched && applicationForm.get('enter_phone_number')?.invalid"
+        >
+        <div class="error-message" *ngIf="applicationForm.get('enter_phone_number')?.touched && applicationForm.get('enter_phone_number')?.invalid">
+          Please enter a valid 10-digit phone number
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group full-width">
+        <input
+          type="email"
+          formControlName="enter_your_email"
+          placeholder="Enter Your Email *"
+          [class.error]="applicationForm.get('enter_your_email')?.touched && applicationForm.get('enter_your_email')?.invalid"
+        >
+        <div class="error-message" *ngIf="applicationForm.get('enter_your_email')?.touched && applicationForm.get('enter_your_email')?.invalid">
+          Please enter a valid email address
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <select
+          formControlName="gender"
+          [class.error]="applicationForm.get('gender')?.touched && applicationForm.get('gender')?.invalid"
+        >
+          <option value="">Gender *</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select
+          formControlName="select_qualification"
+          [class.error]="applicationForm.get('select_qualification')?.touched && applicationForm.get('select_qualification')?.invalid"
+        >
+          <option value="">Select Qualification *</option>
+          <option *ngFor="let qual of qualifications" [value]="qual">{{qual}}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Professional Information -->
+    <div class="form-row">
+      <div class="form-group">
+        <input
+          type="text"
+          formControlName="enter_your_current_job_role"
+          placeholder="Enter Your Current Job Role *"
+        >
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          formControlName="enter_your_current_ctc"
+          placeholder="Enter Your Current CTC *"
+        >
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <select formControlName="position_applying">
+          <option value="">Position Applying For *</option>
+          <option *ngFor="let pos of positions" [value]="pos">{{pos}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select formControlName="years_of_experience">
+          <option value="">Years of Experience *</option>
+          <option *ngFor="let exp of experienceYears" [value]="exp">{{exp}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group full-width">
+        <input
+          type="text"
+          formControlName="enter_your_soft_skills"
+          placeholder="Enter Your Softskills *"
+        >
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group full-width">
+        <input
+          type="text"
+          formControlName="enter_your_training_and_certifications"
+          placeholder="Enter Your Trainings & Certifications *"
+        >
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group full-width">
+        <textarea
+          formControlName="additionl_details"
+          placeholder="Tell us how we can help you. Provide as many details as you can. (optional)"
+          rows="4"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Resume Upload -->
+    <div class="resume-upload">
+      <label class="upload-button" [class.has-file]="selectedFile">
+        <span class="cloud-icon">☁️</span>
+        Resume Upload
+        <input
+          type="file"
+          (change)="onFileSelected($event)"
+          accept=".pdf,.doc,.docx"
+          style="display: none;"
+        >
+      </label>
+      <div class="file-name" *ngIf="selectedFile">
+        {{selectedFile.name}}
+      </div>
+      <div class="upload-hint">
+        Applicant can submit college Certifications or Resume or other documents (optional)
+      </div>
+    </div>
+
+    <!-- Marketing Consent -->
+    <div class="consent-checkbox">
+      <label>
+        <!-- <input type="checkbox" formControlName="marketingConsent"> -->
+        <span>I would like to receive relevant content from Yajentio Software including marketing messages via email</span>
+      </label>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="submit-button"
+      [disabled]="isSubmitting"
+      (click)="onButtonClick()"
+    >
+      <span *ngIf="!isSubmitting">Submit</span>
+      <span *ngIf="isSubmitting">Submitting...</span>
+    </button>
+
+    <!-- Success/Error Messages -->
+    <div class="success-message" *ngIf="submitSuccess">
+      Application submitted successfully!
+    </div>
+    <div class="error-message" *ngIf="submitError">
+      {{submitError}}
+    </div>
+  </form>
+<app-footer></app-footer>
+

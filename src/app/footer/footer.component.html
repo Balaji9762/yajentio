@@ -1,0 +1,68 @@
+<footer *ngIf="footerData" class="footer py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Company Info -->
+      <div class="col-md-3 text-center text-md-start">
+        <img src="assets/images/yta/logo.png" alt="Logo" class="mb-3 footer-logo">
+        <p class="footer-description">
+          Our experts ensure customer satisfaction by providing the best services and 24/7 support during projects.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2">
+        <h5 class="footer-title">QUICK LINKS</h5>
+        <ul class="footer-list">
+          <li *ngFor="let link of footerData.links.quicklinks">
+            <a href="#" class="footer-link">{{ link }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Policies Links -->
+      <div class="col-md-2">
+        <h5 class="footer-title">OUR POLICIES</h5>
+        <ul class="footer-list">
+          <li *ngFor="let link of footerData.links.ourpolicies">
+            <a href="#" class="footer-link">{{ link }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Trending Courses -->
+      <div class="col-md-2">
+        <h5 class="footer-title">TRENDING COURSES</h5>
+        <ul class="footer-list">
+          <li *ngFor="let course of footerData.links.trendingcourses">
+            <a href="#" class="footer-link">{{ course }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3">
+        <h5 class="footer-title">CONTACT INFO</h5>
+        <p class="mb-1"><i class="bi bi-geo-alt-fill"></i> {{ footerData.company.address }}</p>
+        <p class="mb-1"><i class="bi bi-envelope-fill"></i> <a href="mailto:{{ footerData.company.email }}" class="footer-contact">{{ footerData.company.email }}</a></p>
+        <p><i class="bi bi-telephone-fill"></i> <a href="tel:{{ footerData.company.phone }}" class="footer-contact">{{ footerData.company.phone }}</a></p>
+
+        <!-- Social Media Links -->
+        <div class="d-flex gap-3 mt-3">
+          <a [href]="footerData.social.facebook" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+
+          <a [href]="footerData.social.youtube" target="_blank" class="social-icon"><i class="bi bi-youtube"></i></a>
+          <a [href]="footerData.social.linkedin" target="_blank" class="social-icon"><i class="bi bi-linkedin"></i></a>
+          <a [href]="footerData.social.instagram" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+          <a [href]="footerData.social.twitter" target="_blank" class="social-icon"><i class="bi bi-twitter"></i></a>
+          <a [href]="footerData.social.whatsapp" target="_blank" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center mt-4">
+      <hr class="footer-divider">
+      <p class="footer-copyright">{{ footerData.copyright }}</p>
+    </div>
+  </div>
+</footer>

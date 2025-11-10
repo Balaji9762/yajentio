@@ -1,0 +1,274 @@
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.course-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+  background: #fff;
+}
+
+.course-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.course-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+/* Table Container */
+.table-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom Table Styling */
+.custom-table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Table Header Styling */
+.mat-header-cell {
+  background-color: #6200ea; /* Deep Purple */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 12px;
+}
+
+/* Table Row Styling */
+.mat-row:nth-child(even) {
+  background-color: #f3e5f5; /* Light Purple */
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #ede7f6; /* Light Violet */
+}
+
+.mat-row:hover {
+  background-color: #d1c4e9 !important; /* Hover Effect */
+  transition: 0.3s ease-in-out;
+}
+
+/* Cell Styling */
+.mat-cell {
+  font-size: 15px;
+  padding: 12px;
+  color: #333;
+}
+
+/* Borders */
+.border-right {
+  border: 2px solid #7b1fa2;
+  border-radius: 5px;
+}
+
+/* Course Link Styling */
+.course-link {
+  color: white;
+  background-color: #03a9f4;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.course-link:hover {
+  background-color: #0288d1;
+}
+
+/* Paginator Styling */
+.mat-paginator {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .table-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+/* Animated Background */
+body {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #8ec5fc);
+  background-size: 400% 400%;
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Table Container */
+.table-container {
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ // backdrop-filter: blur(10px);
+  overflow-x: auto;
+}
+
+/* Custom Table Styles */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Table Header */
+.mat-header-cell {
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  color: white;
+  padding: 12px;
+}
+
+/* Table Rows */
+.mat-row:nth-child(odd) {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+  color: white;
+}
+
+.mat-row:nth-child(even) {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+}
+
+/* Hover Effects */
+.mat-row:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Borders */
+.border-right {
+  border-right: 2px solid #ddd;
+}
+
+/* Course Link Button */
+.course-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  border-radius: 8px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.course-link:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ee0979, #ff6a00);
+}
+
+/* Paginator */
+.mat-paginator {
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+}
+/* Global Table Styles */
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-table {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  border-collapse: collapse;
+  background: #f9f9f9;
+}
+
+/* Table Header */
+th.mat-header-cell {
+  background: #673ab7;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 12px;
+}
+
+/* Table Cells */
+td.mat-cell, td.mat-footer-cell {
+  font-size: 14px;
+  color: #333;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Row Hover Effect */
+tr.mat-row:hover {
+  background: #eee;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Course Link */
+.course-link {
+  color: #2196f3;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.course-link:hover {
+  color: #0d47a1;
+  text-decoration: underline;
+}
+
+/* Borders for better separation */
+.border-right {
+  border-right: 1px solid #ddd;
+}
+
+/* Paginator Styling */
+mat-paginator {
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}

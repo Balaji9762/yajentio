@@ -1,0 +1,83 @@
+.banner-container {
+  width: 100%;
+  padding: 60px 40px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #3050F8 0%, #3050F8 70%, #FF7A59 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.banner-text {
+  width: 60%;
+  padding-right: 20px;
+
+  h1 {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+  }
+}
+
+.banner-cta {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.get-started-btn {
+  background-color: white;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 68px) {
+  .banner-container {
+    padding: 40px 20px;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-text, .banner-cta {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .banner-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+
+  .banner-cta {
+    justify-content: center;
+    margin-top: 20px;
+  }
+}

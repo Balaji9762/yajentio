@@ -1,0 +1,158 @@
+<app-header></app-header>
+<div class="seo-page-wrapper">
+
+  <section class="page-header">
+    <div class="container text-center">
+      <h1 class="page-title">Search Engine Optimization (SEO)</h1>
+
+      <nav class="breadcrumb">
+        <a routerLink="/home">Home</a>
+        <span class="breadcrumb-separator">»</span>
+        <span class="breadcrumb-current">SEO</span>
+      </nav>
+
+      <p class="page-description">
+        As a leading digital marketing agency, Yajentio Training Academy knows that SEO isn’t just about
+        ranking — it’s about visibility, credibility, and long-term growth. Our data-driven
+        SEO strategies are built on in-depth keyword research, competitor analysis, and
+        search behavior insights. From on-page optimization to content strategy and
+        technical SEO, we tailor every element to boost your search presence and attract
+        high-quality, organic traffic. With Yajentio Training Academy, your brand doesn’t just climb
+        the rankings — it earns lasting authority online.
+      </p>
+    </div>
+  </section>
+
+  <section class="seo-details">
+    <div class="container two-column-layout">
+
+      <div class="image-column">
+        <img src="assets/images/services/seo/20250624_1812_Creative-Content-Strategist_simple_compose_01jygz98j9fydtxfqsvbb389s7-1.webp" alt="SEO process illustration">
+      </div>
+
+      <div class="info-column">
+        <h2 class="sub-heading">HOW SEO WORKS?</h2>
+
+        <div class="steps-list">
+          <div class="step-item" *ngFor="let step of seoSteps">
+            <img [src]="step.iconUrl" [alt]="step.title + ' icon'" class="step-icon">
+            <div class="step-text">
+              <h3 class="step-title">{{ step.title }}</h3>
+              <p class="step-description">{{ step.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<section class="benefits-section">
+  <div class="container">
+
+    <h2 class="section-title">BENEFITS</h2>
+
+    <div class="benefits-grid">
+
+      <div class="benefit-item" *ngFor="let benefit of benefits">
+        <img [src]="benefit.iconUrl" [alt]="benefit.title + ' icon'" class="benefit-icon">
+        <h3 class="benefit-title">{{ benefit.title }}</h3>
+        <p class="benefit-description">{{ benefit.description }}</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+<section class="why-choose-section">
+  <div class="container">
+    <div class="two-column-layout">
+
+      <div class="text-column">
+        <h2 class="section-title">Why Choose Yajentio Training Academy?</h2>
+        <p class="description">
+          As a leading digital marketing agency and trusted SEO partner, Yajentio Training Academy
+          builds search strategies that go beyond rankings — we help your brand earn
+          visibility, authority, and trust. Our team dives deep into your industry, target
+          audience, and competitors to craft tailored SEO campaigns that drive
+          sustainable, high-quality organic traffic. Whether you’re a growing business or
+          an established brand, we ensure every effort contributes to long-term success
+          — no shortcuts, just lasting results.
+        </p>
+      </div>
+
+      <div class="image-column">
+        <img src="assets/images/services/seo/20250620_1227_Confident-Digital-Marketer_simple_compose_01jy62044hfjp87mdt381kh0dg-Photoroom.png" alt="Yajentio Training Academy mascot working on a laptop">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="seo-tools-section">
+  <div class="container">
+
+    <h2 class="section-title-centered">SEO Tools</h2>
+
+    <div class="tools-grid">
+      <div class="tool-logo" *ngFor="let tool of seoTools">
+        <img [src]="tool.logoUrl" [alt]="tool.name + ' logo'">
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">OUR SERVICES</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card" *ngFor="let service of services">
+        <img [src]="service.iconUrl" [alt]="service.title" class="service-icon">
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+
+      <div class="view-all-container">
+        <a routerLink="/services/digitalmarketing" class="btn-view-all">View All Services</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title-faq">FAQ's</h2>
+
+    <div class="faq-grid">
+
+      <div *ngFor="let faq of faqs; let i = index"
+           class="faq-item"
+           [ngClass]="{ 'open': openFaqIndex === i }">
+
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <span>{{ faq.question }}</span>
+          <span class="faq-icon"></span>
+        </div>
+
+        <div class="faq-answer">
+          <p>{{ faq.answer }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta-banner">
+  <div class="cta-container">
+    <span class="cta-text">
+      We are Yajentio Training Academy and we can help you succeed
+    </span>
+
+    <a routerLink="/contact" class="cta-button">
+      Contact Us
+    </a>
+  </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,18 @@
+/* src/app/components/news/news.component.css */
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+.news-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 12px;
+  text-align: center;
+}
+.news-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}

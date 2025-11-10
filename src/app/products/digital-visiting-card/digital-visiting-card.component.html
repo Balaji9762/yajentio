@@ -1,0 +1,38 @@
+<div class="pricing-container">
+  <h2>Choose The Pricing Plan</h2>
+  <div class="plans">
+    <div class="plan" *ngFor="let plan of plans">
+      <div class="plan-header" [ngClass]="{'ultimate': plan.name === 'Ultimate'}">
+        <h3>{{ plan.name }}</h3>
+      </div>
+
+      <div class="plan-content">
+        <div class="price">
+          <span class="discount" *ngIf="plan.originalPrice">
+            Offer Discount: <span class="original-price">₹{{ plan.originalPrice }}</span>
+          </span>
+          <span class="current-price">₹{{ plan.price }}</span> / Life Time
+        </div>
+
+        <ul class="features">
+          <li *ngFor="let feature of plan.features">{{ feature }}</li>
+        </ul>
+      </div>
+      <button>Choose Plan</button>
+    </div>
+  </div>
+</div>
+
+<div class="contact-container">
+  <h2>For Customized Design-Contact Us</h2>
+  <div class="form-inputs">
+    <input type="text" id="name" name="name" placeholder="Enter Your Name" [(ngModel)]="name">
+    <input type="text" id="number" name="number" placeholder="Enter Your Number" [(ngModel)]="number">
+    <button (click)="onSubmit()">
+      <i class="fas fa-phone"></i> Contact Us
+    </button>
+  </div>
+</div>
+<br/>
+<app-footer></app-footer>
+

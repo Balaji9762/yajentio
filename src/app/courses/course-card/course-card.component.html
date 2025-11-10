@@ -1,0 +1,15 @@
+<div class="course-card">
+  <div class="course-image">
+    <img [src]="course.image" [alt]="course.title" />
+    <span class="course-tag">{{ course.category }}</span>
+  </div>
+  <div class="course-content">
+    <h3>{{ course.title }}</h3>
+    <p><strong>{{ course.instructor }}</strong></p>
+    <div class="course-footer">
+      <!-- <a href="/c-language-training" class="details-link">Know Details →</a> -->
+      <a  (click)="getdetails(course.course_name)"class="details-link">Know Details →</a>
+    </div>
+  </div>
+</div>
+

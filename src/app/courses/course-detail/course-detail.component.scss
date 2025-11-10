@@ -1,0 +1,217 @@
+/* ===== General Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+.course-detail-container {
+  padding: 20px 10%;
+  background: #f9fafb;
+}
+
+/* ===== Breadcrumb Navigation ===== */
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #6b7280;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.breadcrumb span {
+  color: #374151;
+  font-weight: bold;
+}
+
+/* ===== Course Header Section ===== */
+.course-header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.course-category {
+  display: inline-block;
+  background: #16a34a;
+  color: white;
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.course-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-top: 10px;
+}
+
+.course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: #475569;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.rating {
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+/* ===== Course Content Layout (Grid) ===== */
+.course-content {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.course-left {
+  flex: 2;
+}
+
+.course-right {
+  flex: 1;
+}
+
+/* ===== Course Image ===== */
+.course-image-large {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Tabs Section ===== */
+.tabs {
+  display: flex;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+.tabs button.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.tabs button:not(.active):hover {
+  background-color: #e2e8f0;
+}
+
+/* ===== Tab Content ===== */
+.tab-content {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+  margin-top: 10px;
+}
+
+.curriculum-item {
+  padding: 12px;
+  background: #f9f9f9;
+  border-left: 5px solid #3b82f6;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* ===== Sidebar (Right Section) ===== */
+.course-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-thumbnail {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.course-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.course-card ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.course-card ul li i {
+  color: #2563eb;
+}
+
+.enroll-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background:rgb(188, 234, 166);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.enroll-btn:hover {
+  background:rgb(1, 10, 28);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .course-content {
+    flex-direction: column;
+  }
+
+  .course-left,
+  .course-right {
+    flex: unset;
+    width: 100%;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+  }
+}
+/* Enroll Button */
+.enroll-button {
+  background-color: #dbe4ee; /* Primary button color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.course-details {
+  padding: 20px;
+}

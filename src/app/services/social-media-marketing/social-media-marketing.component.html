@@ -1,0 +1,146 @@
+<app-header></app-header>
+<div class="seo-page-wrapper">
+
+  <section class="page-header">
+    <div class="container text-center">
+      <h1 class="page-title">Social Media Marketing</h1>
+
+      <nav class="breadcrumb">
+        <a routerLink="/home">Home</a>
+        <span class="breadcrumb-separator">»</span>
+        <span class="breadcrumb-current">Social Media Marketing</span>
+      </nav>
+
+      <p class="page-description">
+       Engage your audience with strategic, platform-specific content that captures attention, sparks interaction, and builds meaningful brand connections — all while enhancing your social media presence.
+      </p>
+    </div>
+  </section>
+
+  <section class="seo-details">
+    <div class="container two-column-layout">
+
+      <div class="image-column">
+        <img src="/assets/images/services/seo/sd 1.png" alt="SEO process illustration">
+      </div>
+
+      <div class="info-column">
+        <h2 class="sub-heading">How Social Media Marketing Works</h2>
+
+        <div class="steps-list">
+          <div class="step-item" *ngFor="let step of seoSteps">
+            <img [src]="step.iconUrl" [alt]="step.title + ' icon'" class="step-icon">
+            <div class="step-text">
+              <h3 class="step-title">{{ step.title }}</h3>
+              <p class="step-description">{{ step.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<section class="benefits-section">
+  <div class="container">
+
+    <h2 class="section-title">BENEFITS</h2>
+
+    <div class="benefits-grid">
+
+      <div class="benefit-item" *ngFor="let benefit of benefits">
+        <img [src]="benefit.iconUrl" [alt]="benefit.title + ' icon'" class="benefit-icon">
+        <h3 class="benefit-title">{{ benefit.title }}</h3>
+        <p class="benefit-description">{{ benefit.description }}</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+<section class="why-choose-section">
+  <div class="container">
+    <div class="two-column-layout">
+
+      <div class="text-column">
+        <h2 class="section-title">Why Choose Yajentio Training Academy?</h2>
+        <p class="description">
+          As a leading digital marketing agency, Yajentio Training Academy creates social media strategies that go beyond just posting — we build engagement, community, and brand loyalty. We dive deep into your business goals, target audience, and platform dynamics to craft content that connects and campaigns that convert. Whether you’re growing a new presence or scaling an established brand, we focus on creative storytelling, data-driven targeting, and consistent interaction — ensuring every post has purpose and every follower feels valued.
+        </p>
+      </div>
+
+      <div class="image-column">
+        <img src="/assets/images/services/seo/20250620_1227_Confident-Digital-Marketer_simple_compose_01jy62044hfjp87mdt381kh0dg-Photoroom.png" alt="Yajentio Training Academy mascot working on a laptop">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="seo-tools-section">
+  <div class="container">
+
+    <h2 class="section-title-centered">Social Media Marketing Tools</h2>
+
+    <div class="tools-grid">
+      <div class="tool-logo" *ngFor="let tool of seoTools">
+        <img [src]="tool.logoUrl" [alt]="tool.name + ' logo'">
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">OUR SERVICES</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card" *ngFor="let service of services">
+        <img [src]="service.iconUrl" [alt]="service.title" class="service-icon">
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+
+      <div class="view-all-container">
+        <a routerLink="/services/digitalmarketing" class="btn-view-all">View All Services</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title-faq">FAQ's</h2>
+
+    <div class="faq-grid">
+
+      <div *ngFor="let faq of faqs; let i = index"
+           class="faq-item"
+           [ngClass]="{ 'open': openFaqIndex === i }">
+
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <span>{{ faq.question }}</span>
+          <span class="faq-icon"></span>
+        </div>
+
+        <div class="faq-answer">
+          <p>{{ faq.answer }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta-banner">
+  <div class="cta-container">
+    <span class="cta-text">
+      We are Yajentio Training Academy and we can help you succeed
+    </span>
+
+    <a routerLink="/contact" class="cta-button">
+      Contact Us
+    </a>
+  </div>
+</section>
+<app-footer></app-footer>

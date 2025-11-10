@@ -1,0 +1,21 @@
+# Enable .webp MIME type
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+
+# Cache .webp images
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+</IfModule>
+
+# Fallback for Angular routing
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+

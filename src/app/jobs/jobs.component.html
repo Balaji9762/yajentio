@@ -1,0 +1,54 @@
+<app-header></app-header>
+<section class="hero-section">
+  <div class="wave-pattern"></div>
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+              <div class="hero-content">
+                  <h1 class="hero-title" data-aos="fade-up">Jobs</h1>
+                  <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                  Latest  Jobs Updates
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <img src="assets/images/jobs/jobs banner.jpeg" alt="" class="floating-illustration illustration-right" aria-hidden="true">
+</section>
+<div class="job-listing-container">
+  <h2>Latest Jobs</h2>
+  <div *ngFor="let job of jobs" class="job-card">
+    <img [src]="job.company_logo_url" [alt]="job.company_name">
+    <h2>{{ job.job_title }}</h2>
+    <p><strong>Location:</strong> {{ job.location }}</p>
+    <p><strong>Status:</strong> {{ job.status }}</p>
+    <span class="badge">{{ job.job_type }}</span>
+    <span class="badge">{{ job.experience_range }}</span>
+    <span class="badge">{{ job.level }}</span>
+    <!-- <a href="/application-form" class="apply-button">Apply Now</a> -->
+    <button id="apply-now-btn" routerLink="/application-form" class="apply-button">Apply Now</button>
+
+  </div>
+</div>
+<div class="contact-container">
+  <h3>Contact us by Phone Number or Email Address</h3>
+  <div class="phone-number">
+    +91 7418602650
+  </div>
+  <div class="or">OR</div>
+  <div class="email">
+    contact&#64;yajentiotrainingacademy.com
+     <!-- supportit&#64;yajentio.com -->
+  </div>
+  <div class="social-icons">
+    <a href="https://x.com/Yajentio_Train" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.youtube.com/@Yajentio-Training-Academy" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/people/Yst-Acdemy/pfbid05ni9sHpr9zZYYXksJjPh8hvLSejht9eAWxQZzbkJBcBBC4rqyoVPqC2qrKFPVBUol/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.linkedin.com/in/yajentio-training-academy-584225385/?trk=public-profile-join-page" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/yajentiotrainingacademy/" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+
+<app-chat-box></app-chat-box>
+<app-footer></app-footer>
+

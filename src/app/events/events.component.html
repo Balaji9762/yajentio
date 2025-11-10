@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="events-container">
+      <div class="loading-state" *ngIf="loading">
+        <div class="spinner"></div>
+        <p>Loading events...</p>
+      </div>
+
+      <div class="error-state" *ngIf="error && !loading">
+        <div class="error-icon">⚠️</div>
+        <h3>Unable to load events</h3>
+        <p>{{ error }}</p>
+        <button (click)="loadEvents()" class="retry-button">
+          Try Again
+        </button>
+      </div>
+
+      <div class="events-grid" *ngIf="!loading && !error && events.length > 0">
+        <div class="event-card" *ngFor="let event of events; trackBy: trackByEventId">
+          <img class="event-icon" [src]="getEventImage(event.y_iconimage)" [alt]="event.title" *ngIf="event.y_iconimage">
+          <h4 class="event-title">{{ event.title }}</h4>
+          <p class="event-paragraph">{{ event.paragraph }}</p>
+          <div class="event-meta">
+            <span class="event-date">{{ event.date }}</span>
+            <span class="event-time">{{ event.time }}</span>
+            <span class="event-trainer">Trainer: {{ event.trainername }}</span>
+            <span class="event-host">Hosted by: {{ event.hostedby }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="empty-state" *ngIf="!loading && !error && events.length === 0">
+        <div class="empty-icon">📅</div>
+        <h3>No events available</h3>
+        <p>Check back later for upcoming events.</p>
+      </div>
+    </div>
+
+
+
+<app-footer></app-footer>

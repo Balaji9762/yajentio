@@ -1,0 +1,261 @@
+<app-header></app-header>
+<section class="hero-container">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h2 class="service-label">Digital Marketing Services</h2>
+
+      <h1 class="hero-heading">
+        Built on Strategy. Crafted with<br>Creativity. Measured by Impact.
+      </h1>
+
+      <p class="hero-description">
+        At Yajentio Training Academy, we offer creative and result-driven digital solutions —
+        from web design and SEO to social media marketing and paid ads. Our
+        goal is simple: to help your brand grow online with strategies that truly
+        perform.
+      </p>
+
+      <div class="cta-buttons">
+        <button class="btn btn-primary" (click)="onViewServices()">
+          <span class="arrow">⤴</span> View All Services
+        </button>
+        <button class="btn btn-secondary" (click)="onContactUs()">
+          <span class="circle">⊙</span> Contact Us
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="assets/images/services/digital marketing/new digital.png"
+        alt="Digital marketing professional at laptop"
+        class="character-image"
+      />
+    </div>
+  </div>
+</section>
+<div class="modal-overlay" *ngIf="showModal()">
+  <div class="modal-container">
+    <!-- Close button -->
+    <button class="close-btn" (click)="onClose()">&times;</button>
+
+    <div class="modal-content">
+      <!-- Left Section -->
+      <div class="left-section">
+        <h2 class="heading">Say hello, we'd<br>love to contact you</h2>
+
+        <div class="contact-info">
+          <svg class="email-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <!-- <span>info@redjalebi.com</span> -->
+        </div>
+
+        <p class="description">If You already have a project brief in mind, then fill the form or call to given number..</p>
+
+        <button class="phone-btn">
+          <svg class="phone-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          +91-7418602650
+        </button>
+      </div>
+
+      <!-- Right Section - Form -->
+      <div class="right-section">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form">
+          <!-- Success Message -->
+          <div *ngIf="successMessage" class="success-message">
+            {{ successMessage }}
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
+
+          <!-- Name Field -->
+          <div class="form-group">
+            <label>Name <span class="required">*</span></label>
+            <input
+              type="text"
+              formControlName="name"
+              placeholder="Your name"
+              [class.error-input]="contactForm.get('name')?.touched && contactForm.get('name')?.invalid"
+            >
+            <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" class="error-text">
+              {{ nameError }}
+            </div>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label>Email <span class="required">*</span></label>
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="your@email.com"
+              [class.error-input]="contactForm.get('email')?.touched && contactForm.get('email')?.invalid"
+            >
+            <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" class="error-text">
+              {{ emailError }}
+            </div>
+          </div>
+
+          <!-- Phone Field -->
+          <div class="form-group">
+            <label>Phone <span class="required">*</span></label>
+            <div class="phone-input-wrapper">
+              <span class="country-code">
+                <img src="https://flagcdn.com/w20/in.png" alt="India">
+                <span>+91</span>
+              </span>
+              <input
+                type="tel"
+                formControlName="phone"
+                placeholder="7418602650"
+                [class.error-input]="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid"
+              >
+            </div>
+            <div *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid" class="error-text">
+              {{ phoneError }}
+            </div>
+          </div>
+
+          <!-- Service Dropdown -->
+          <div class="form-group">
+            <label>Service <span class="required">*</span></label>
+            <select
+              formControlName="service"
+              [class.error-input]="contactForm.get('service')?.touched && contactForm.get('service')?.invalid"
+            >
+              <option *ngFor="let service of serviceOptions" [value]="service">
+                {{ service }}
+              </option>
+            </select>
+            <div *ngIf="contactForm.get('service')?.touched && contactForm.get('service')?.invalid" class="error-text">
+              {{ serviceError }}
+            </div>
+          </div>
+
+          <!-- Message Field -->
+          <div class="form-group full-width">
+            <label>Message <span class="required">*</span></label>
+            <textarea
+              formControlName="message"
+              placeholder="Your message here..."
+              rows="6"
+              [class.error-input]="contactForm.get('message')?.touched && contactForm.get('message')?.invalid"
+            ></textarea>
+            <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" class="error-text">
+              {{ messageError }}
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="submit-btn"
+            [disabled]="isLoading"
+          >
+            {{ isLoading ? 'Submitting...' : 'Submit your Enquiry' }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!-- <button class="request-proposal-btn" (click)="openModal()">
+    Request Proposal
+  </button> -->
+  <div class="proposal-banner">
+  <div class="proposal-content">
+    <span class="proposal-text">
+      Need a custom growth strategy?
+      <strong>Yajentio Training Academy results, not just reports.</strong>
+    </span>
+    <button class="request-proposal-btn" (click)="openModal()">
+      Request Proposal
+    </button>
+  </div>
+</div>
+<section class="services-section">
+  <div class="container">
+
+    <h2 class="section-title">Our Digital Marketing Services</h2>
+    <h3 class="section-subtitle">
+      Discover our services — where strategy meets creativity to turn leads into loyal customers.
+    </h3>
+    <p class="section-description">
+      Our multi-channel digital marketing strategies are designed to elevate your brand
+      visibility and accelerate business growth — driving profits and maximizing ROI.
+    </p>
+    <p class="section-description">
+      From startups to scaleups, B2B to D2C — Yajentio Training Academy partners with businesses
+      across industries to deliver impactful results, pan-India and beyond.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-card" *ngFor="let service of services">
+        <img [src]="service.iconUrl" [alt]="service.title + ' icon'" class="service-icon">
+        <h4 class="service-title">{{ service.title }}</h4>
+        <p class="service-description">{{ service.description }}</p>
+        <a [routerLink]="service.routePath" class="btn-read-more">
+          Read More
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="faq-container">
+
+    <p class="faq-pre-title">
+      <span class="pre-title-icon"></span>
+      FREQUENT QUESTIONS
+    </p>
+    <h2 class="faq-title">
+      Turning curiosity into clarity — Yajentio Training Academy.
+    </h2>
+
+    <div class="faq-list">
+
+      <div *ngFor="let faq of faqs; let i = index"
+           class="faq-item"
+           [ngClass]="{ 'open': openFaqIndex === i }">
+
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <span>{{ faq.question }}</span>
+
+          <span class="faq-icon">
+            <span *ngIf="openFaqIndex !== i">+</span>
+            <span *ngIf="openFaqIndex === i">^</span>
+          </span>
+        </div>
+
+        <div class="faq-answer">
+          <p>{{ faq.answer }}</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="cta-banner">
+  <div class="cta-container">
+    <span class="cta-text">
+      We are Yajentio Training Academy and we can help you succeed
+    </span>
+
+    <a routerLink="/contact" class="cta-button">
+      Contact Us
+    </a>
+  </div>
+</section>
+  <app-chat-box></app-chat-box>
+  <app-footer></app-footer>

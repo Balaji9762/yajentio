@@ -1,0 +1,22 @@
+{
+  "company": {
+    "name": "Yajentio Software  Pvt. Ltd.",
+    "address": "D.No: 90,3rd cross st, phase-2Thirumalai Nagar AnnexePerungudi,Chennai,600096",
+    "email": "contact@yajentiotrainingacademy.com",
+    "phone": "+917418602650"
+  },
+  "links": {
+    "quicklinks": [ "News & Events", "Interview Questions", "Online Batches", "Classroom Batches", "Contact Us", "About Us"],
+    "ourpolicies": ["Pricing Policy", "Terms & Conditions", "Privacy Policy", "Refund Policy"],
+    "trendingcourses": ["Full Stack Development", "DSA", "DevOps With AWS", "Cloud Computing", "Software Testing", "Data Science", "Machine Learning", "Artificial Intelligence", "Cyber Security"]
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/people/Yst-Acdemy/pfbid05ni9sHpr9zZYYXksJjPh8hvLSejht9eAWxQZzbkJBcBBC4rqyoVPqC2qrKFPVBUol/",
+    "linkedin": "https://www.linkedin.com/in/yajentio-training-academy-584225385/?trk=public-profile-join-page",
+    "instagram": "https://www.instagram.com/yajentiotrainingacademy/"
+  },
+ "copyright": "Copyright © 2025 YTA  All Rights Rerved.Design And Developed By Support-IT"
+
+
+
+}

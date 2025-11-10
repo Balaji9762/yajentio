@@ -1,0 +1,32 @@
+<app-header></app-header>
+<section class="hero-section">
+  <div class="wave-pattern"></div>
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+              <div class="hero-content">
+                  <h1 class="hero-title" data-aos="fade-up">Careers</h1>
+                  <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Drop us Message for any Query
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <img src="../assets/careers/career.jp" alt="" class="floating-illustration illustration-left" aria-hidden="true">
+  <img src="../assets/careers/career_banner.jpg" alt="" class="floating-illustration illustration-right" aria-hidden="true">
+</section>
+<div class="landing-section">
+  <h2>Grow Your Career</h2>
+  <p>For employers who need great Place. Find Better, Faster.</p>
+  <div class="card-container">
+    <div class="card" *ngFor="let card of cards">
+      <img [src]="card.image" [alt]="card.title">
+      <h3>{{ card.title }}</h3>
+      <!-- <a [href]="card.link" class="apply-button">{{ card.description }}</a> -->
+      
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+

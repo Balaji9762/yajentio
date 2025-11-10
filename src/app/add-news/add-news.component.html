@@ -1,0 +1,59 @@
+<div class="add-news-container">
+  <h2>Add New Content</h2>
+
+  <form [formGroup]="newsForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Title</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="Enter news title"
+      >
+      <div class="error-message" *ngIf="newsForm.get('name')?.touched && newsForm.get('name')?.invalid">
+        <span *ngIf="newsForm.get('name')?.errors?.['required']">Title is required</span>
+        <span *ngIf="newsForm.get('name')?.errors?.['minlength']">Title must be at least 5 characters</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image URL</label>
+      <input
+        type="text"
+        id="image"
+        formControlName="image"
+        placeholder="Enter image URL"
+      >
+      <div class="error-message" *ngIf="newsForm.get('image')?.touched && newsForm.get('image')?.invalid">
+        <span *ngIf="newsForm.get('image')?.errors?.['required']">Image URL is required</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="time">Date</label>
+      <input
+        type="date"
+        id="time"
+        formControlName="time"
+      >
+      <div class="error-message" *ngIf="newsForm.get('time')?.touched && newsForm.get('time')?.invalid">
+        <span *ngIf="newsForm.get('time')?.errors?.['required']">Date is required</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="link">Link</label>
+      <input
+        type="text"
+        id="link"
+        formControlName="link"
+        placeholder="Enter news link"
+      >
+      <div class="error-message" *ngIf="newsForm.get('link')?.touched && newsForm.get('link')?.invalid">
+        <span *ngIf="newsForm.get('link')?.errors?.['required']">Link is required</span>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-button" [disabled]="newsForm.invalid">Add News</button>
+  </form>
+</div>

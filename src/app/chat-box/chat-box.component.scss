@@ -1,0 +1,211 @@
+/* Chat container (hidden by default) */
+.chat-container {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  max-height: 450px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: none; /* Hidden initially */
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Show chat when open */
+.chat-container.open {
+  display: flex;
+}
+
+/* Chat header */
+.chat-header {
+  background: #89e55f;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Chat messages */
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 300px;
+  background: #f9f9f9;
+}
+
+/* Individual messages */
+.chat-messages div {
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+/* User message */
+.my-message {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: auto;
+}
+
+/* Bot message */
+.other-message {
+  background: #e0e0e0;
+  color: black;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Chat input */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background: white;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.chat-input button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chat-input button:hover {
+  background: #0056b3;
+}
+
+/* Floating Chat Icon */
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #08dc2f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1);
+}
+
+.chat-icon img {
+  width: 35px;
+  height: 35px;
+}
+/* Floating Chat Icon */
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #007bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1);
+  background: #0056b3;
+}
+
+/* Chat Icon Image */
+.chat-icon img {
+  width: 35px;
+  height: 35px;
+  filter: invert(100%); /* Makes icon white for visibility */
+}
+/* Floating Chat Icon */
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #007bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1);
+  background: #64df82;
+}
+
+/* Chat Icon Image */
+.chat-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures image fits nicely */
+}
+/* Floating Chat Icon */
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px; /* Increased size */
+  height: 60px; /* Increased size */
+  background: #a1c0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, background 0.3s;
+  overflow: hidden; /* Ensures the image stays inside the circle */
+}
+
+/* Hover Effect */
+.chat-icon:hover {
+  transform: scale(1.1);
+  background: #5bdb9d;
+}
+
+/* Chat Icon Image */
+.chat-icon img {
+  width: 100%; /* Makes the image fill the container */
+  height: 100%; /* Makes the image fill the container */
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image fully fits within the circular shape */
+}

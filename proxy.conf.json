@@ -1,0 +1,74 @@
+{
+    "/GetAlltrainingcourses": {
+        "target":"http://3.108.126.170:8080",
+        "secure":false,
+        "changeOrigin":true
+    },
+    "/savecontact": {
+      "target":"http://3.108.126.170:8080",
+      "secure":false,
+      "changeOrigin":true
+  },
+  "/getAllcourse": {
+    "target":"http://3.108.126.170:8080",
+    "secure":false,
+    "changeOrigin":true
+},
+"/getbycoursename": {
+    "target":"http://3.108.126.170:8080",
+    "secure":false,
+    "changeOrigin":true
+},
+"/coursetopic": {
+    "target":"http://3.108.126.170:8080",
+    "secure":false,
+    "changeOrigin":true
+},
+"/Register": {
+      "target":"http://3.108.126.170:8080",
+      "secure":false,
+      "changeOrigin":true
+  },
+
+"/Applyforjob": {
+      "target":"http://3.108.126.170:8080",
+      "secure":false,
+      "changeOrigin":true
+  },
+  "/GetLatestjobs": {
+      "target":"http://3.108.126.170:8080",
+      "secure":false,
+      "changeOrigin":true
+  },
+  "/saveUserform": {
+      "target":"http://3.108.126.170:8080",
+      "secure":false,
+      "changeOrigin":true
+  },
+  "/getAllnews": {
+      "target":"http://3.108.126.170:8080",
+      "secure":false,
+      "changeOrigin":true
+  },
+  "/addNews": {
+      "target":"http://3.108.126.170:8080",
+      "secure":false,
+      "changeOrigin":true
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

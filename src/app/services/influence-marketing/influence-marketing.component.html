@@ -1,0 +1,133 @@
+<app-header></app-header>
+<div class="seo-page-wrapper">
+
+  <section class="page-header">
+    <div class="container text-center">
+      <h1 class="page-title">Influence Marketing</h1>
+
+      <nav class="breadcrumb">
+        <a routerLink="/home">Home</a>
+        <span class="breadcrumb-separator">»</span>
+        <span class="breadcrumb-current">Influence Marketing</span>
+      </nav>
+
+      <p class="page-description">
+       As a creative digital agency, Yajentio Training Academy knows that modern marketing is built on trust and authenticity — and nothing delivers that like influencer partnerships. Our influencer marketing services are designed to connect your brand with real voices that resonate with your audience. Whether it’s micro-influencers driving niche engagement or top-tier creators delivering wide reach, we craft campaigns that blend storytelling with strategy. From social media collaborations to product placements and brand integrations, Yajentio Training Academy ensures every partnership feels genuine, impactful, and aligned with your goals
+      </p>
+    </div>
+  </section>
+
+  <section class="seo-details">
+    <div class="container two-column-layout">
+
+      <div class="image-column">
+        <img src="assets/images/services/seo/i 1.png" alt="SEO process illustration">
+      </div>
+
+      <div class="info-column">
+        <h2 class="sub-heading">HOW INFLUENCE MARKETING WORKS</h2>
+
+        <div class="steps-list">
+          <div class="step-item" *ngFor="let step of seoSteps">
+            <img [src]="step.iconUrl" [alt]="step.title + ' icon'" class="step-icon">
+            <div class="step-text">
+              <h3 class="step-title">{{ step.title }}</h3>
+              <p class="step-description">{{ step.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<section class="benefits-section">
+  <div class="container">
+
+    <h2 class="section-title">BENEFITS</h2>
+
+    <div class="benefits-grid">
+
+      <div class="benefit-item" *ngFor="let benefit of benefits">
+        <img [src]="benefit.iconUrl" [alt]="benefit.title + ' icon'" class="benefit-icon">
+        <h3 class="benefit-title">{{ benefit.title }}</h3>
+        <p class="benefit-description">{{ benefit.description }}</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+<section class="why-choose-section">
+  <div class="container">
+    <div class="two-column-layout">
+
+      <div class="text-column">
+        <h2 class="section-title">Why Choose Yajentio Training Academy?</h2>
+        <p class="description">
+           As a creative-first digital agency, Yajentio Training Academy goes beyond promotions — we build real connections between brands and audiences through influencer collaborations that feel authentic and meaningful. Our influencer marketing campaigns are carefully designed to match your brand’s voice with the right creators, ensuring content that engages, inspires, and drives action. Whether it’s micro-influencers for niche outreach or well-known names for mass appeal, we craft strategies that deliver more than visibility — they build trust, loyalty, and lasting impact.
+        </p>
+      </div>
+
+      <div class="image-column">
+        <img src="assets/images/services/seo/20250620_1227_Confident-Digital-Marketer_simple_compose_01jy62044hfjp87mdt381kh0dg-Photoroom.png" alt="Yajentio Training Academy mascot working on a laptop">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">OUR SERVICES</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card" *ngFor="let service of services">
+        <img [src]="service.iconUrl" [alt]="service.title" class="service-icon">
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+
+      <div class="view-all-container">
+        <a routerLink="/services/digitalmarketing" class="btn-view-all">View All Services</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title-faq">FAQ's</h2>
+
+    <div class="faq-grid">
+
+      <div *ngFor="let faq of faqs; let i = index"
+           class="faq-item"
+           [ngClass]="{ 'open': openFaqIndex === i }">
+
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <span>{{ faq.question }}</span>
+          <span class="faq-icon"></span>
+        </div>
+
+        <div class="faq-answer">
+          <p>{{ faq.answer }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta-banner">
+  <div class="cta-container">
+    <span class="cta-text">
+      We are Yajentio Training Academy and we can help you succeed
+    </span>
+
+    <a routerLink="/contact" class="cta-button">
+      Contact Us
+    </a>
+  </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,138 @@
+.pricing-container {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.plans {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1200px; /* Adjust as needed */
+}
+
+.plan {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 30%; /* Adjust as needed */
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+}
+
+.plan:hover {
+  transform: translateY(-5px);
+}
+
+.plan-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.ultimate {
+  background-color: #1976d2;
+  color: white;
+  border-radius: 8px 8px 0 0;
+  margin: -20px -20px 15px -20px;
+}
+
+.ultimate h3{
+  margin: 0;
+}
+
+.price {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.discount {
+  display: block;
+  color: #777;
+  font-size: 0.8em;
+}
+
+.original-price {
+  text-decoration: line-through;
+  margin-left: 5px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.features li:last-child {
+  border-bottom: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+.contact-container {
+  background-color: #ffb3b3; /* Light red background */
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  position: relative; /* For positioning shapes */
+  overflow: hidden; /* Hide overflowing shapes */
+}
+
+.contact-container h2 {
+  color: #000080; /* Dark blue title */
+  margin-bottom: 30px;
+}
+
+.form-inputs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.form-inputs input {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #a52a2a; /* Brown input fields */
+  color: white;
+  font-size: 16px;
+}
+
+.form-inputs input::placeholder {
+  color: rgba(255, 255, 255, 0.8); /* Lighter placeholder text */
+}
+
+.form-inputs button {
+  background-color: #0000cd; /* Blue button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-inputs button i {
+  font-size: 18px; /* Adjust icon size as needed */
+}

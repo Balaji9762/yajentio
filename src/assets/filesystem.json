@@ -1,0 +1,24 @@
+[
+  {
+      "data": { "name": "Documents", "size": "75kb", "type": "Folder" },
+      "children": [
+          {
+              "data": { "name": "Resume.docx", "size": "25kb", "type": "Document" }
+          },
+          {
+              "data": { "name": "Presentation.pptx", "size": "50kb", "type": "Presentation" }
+          }
+      ]
+  },
+  {
+      "data": { "name": "Images", "size": "150kb", "type": "Folder" },
+      "children": [
+          {
+              "data": { "name": "photo1.jpg", "size": "100kb", "type": "Image" }
+          },
+          {
+              "data": { "name": "photo2.png", "size": "50kb", "type": "Image" }
+          }
+      ]
+  }
+]

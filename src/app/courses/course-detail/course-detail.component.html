@@ -1,0 +1,89 @@
+<app-header></app-header>
+<app-course-banner></app-course-banner>
+
+<div *ngIf="course" class="course-detail-container">
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb">
+    <a href="/home">Home</a> »
+    <a href="/courses">Courses</a> »
+    <span>{{ course.course_name }}</span>
+  </nav>
+  <!-- <p><strong>Starting Date:</strong> {{ course.starting_date | date }}</p>
+  <p><strong>Platform:</strong> {{ course.platform }}</p>
+  <p><strong>Trainer Name:</strong> {{ course.trainer_name }}</p> -->
+  <!-- Course Header -->
+  <div class="course-header">
+    <span class="course-category">{{ course.category }}</span>
+    <h1 class="course-title">{{ course.course_name }}</h1>
+    <div class="course-meta">
+      <span><p><strong>Trainer Name:</strong> {{ course.trainer_name }}</p></span>
+      <span><p><strong>Starting Date:</strong> {{ course.start_date | date }}</p></span>
+      <span class="rating">⭐⭐⭐⭐⭐ 4.5</span>
+    </div>
+  </div>
+
+  <!-- Course Content -->
+  <div class="course-content">
+    <!-- Left Side -->
+    <div class="course-left">
+      <img [src]="course.course_image_url" alt="{{ course.course_name }}" class="course-image-large" />
+
+      <!-- Tabs Section -->
+      <div class="tabs">
+        <button [class.active]="selectedTab === 'description'" (click)="onSelectTab('description')">
+          📖 Description
+        </button>
+        <button [class.active]="selectedTab === 'curriculum'" (click)="onSelectTab('curriculum')">
+          📋 Curriculum
+        </button>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <div *ngIf="selectedTab === 'description'">
+          <h3>Course Overview</h3>
+          <p>{{ course.course_overview }}</p>
+        </div>
+        <div *ngIf="selectedTab === 'curriculum'">
+          <h3>Curriculum</h3>
+          <ul *ngIf="curriculumData && curriculumData.length > 0; else loading">
+            <li *ngFor="let topic of curriculumData">
+              📌 {{ topic.topics }} - {{ topic.description }}
+            </li>
+          </ul>
+          <ng-template #loading>
+            <p>Loading curriculum...</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="course-right">
+      <div class="course-card">
+        <img [src]="course.course_image_url" class="course-thumbnail" />
+        <ul>
+          <li><i class="fas fa-user"></i> <span><p><strong>Trainer Name:</strong> {{ course.trainer_name }}</p></span></li>
+          <li><i class="fas fa-book"></i> <p><strong>Starting Date:</strong> {{ course.start_date | date }}</p> </li>
+          <li><i class="fas fa-clock"></i> <strong>Duration:</strong> 6 weeks</li>
+          <li><i class="fas fa-users"></i> <p><strong>Platform:</strong> {{ course.platform }}</p></li>
+          <li><i class="fas fa-globe"></i> <strong>Language:</strong> English</li>
+        </ul>
+        <button class="enroll-btn">
+          <!-- <a href="/contact" class="details-link">Enroll →</a> -->
+          <a routerLink="/contact" class="details-link">Enroll →</a>
+
+
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<app-chat-box></app-chat-box>
+<app-register></app-register>
+<app-banner></app-banner>
+<app-footer></app-footer>
+
+

@@ -1,0 +1,40 @@
+<app-header></app-header>
+<section class="hero-section">
+  <div class="wave-pattern"></div>
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+              <div class="hero-content">
+                  <h1 class="hero-title" data-aos="fade-up">Courses Training</h1>
+                  <div class="breadcrumbs">
+                    <a href="/home">Home</a>
+                    <span>•</span>
+                    <span>Courses Training</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <img src="assets/images/courses/course training/course training banner.gif" alt="" class="floating-illustration illustration-left" aria-hidden="true">
+  <img src="assets/images/courses/course training/course t.webp" alt="" class="floating-illustration illustration-right" aria-hidden="true">
+</section>
+<div *ngIf="courseDetails" class="course-container">
+  <h2>{{ courseDetails.course_name }}</h2>
+  <div class="course-box">
+    <p><strong>ID:</strong> {{ courseDetails.id }}</p>
+    <p><strong>CourseName:</strong> {{ courseDetails.coursename }}</p>
+    <p><strong>Start Date:</strong> {{ courseDetails.created_at | date:'short' }}</p>
+    <p><strong>Time:</strong> {{ courseDetails.timing }}</p>
+    <p><strong>Description:</strong> {{ courseDetails.description }}</p>
+    <p><strong>Platform:</strong> {{ courseDetails.platform }}</p>
+
+  </div>
+   <!-- Register Now Button -->
+   <div class="register-btn-container">
+    <a [routerLink]="['/course-detail', courseDetails.id]" class="register-btn">Register Now</a>
+  </div>
+</div>
+
+
+<app-banner></app-banner>
+<app-footer></app-footer>

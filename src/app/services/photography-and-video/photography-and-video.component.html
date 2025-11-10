@@ -1,0 +1,132 @@
+<app-header></app-header>
+<div class="seo-page-wrapper">
+
+  <section class="page-header">
+    <div class="container text-center">
+      <h1 class="page-title">Photography and Video</h1>
+
+      <nav class="breadcrumb">
+        <a routerLink="/home">Home</a>
+        <span class="breadcrumb-separator">»</span>
+        <span class="breadcrumb-current">Photography and Video</span>
+      </nav>
+
+      <p class="page-description">
+        As a creative digital agency, Yajentio Training Academy understands that impactful visuals are more than just aesthetics — they’re tools for storytelling, emotion, and engagement. Our photography and videography services are designed to capture the essence of your brand through compelling imagery and cinematic visuals. Whether it’s product shoots, wedding shoots, candid photography, brand films, social media content, or event coverage, we focus on style, clarity, and narrative. With Yajentio Training Academy, every frame is crafted to leave a lasting impression and connect deeply with your audience.
+      </p>
+    </div>
+  </section>
+
+  <section class="seo-details">
+    <div class="container two-column-layout">
+
+      <div class="image-column">
+        <img src="assets/images/services/seo/p1.png" alt="SEO process illustration">
+      </div>
+
+      <div class="info-column">
+        <h2 class="sub-heading">HOW PHOTOGRAPHY AND VIDEOGRAPHY WORKS</h2>
+
+        <div class="steps-list">
+          <div class="step-item" *ngFor="let step of seoSteps">
+            <img [src]="step.iconUrl" [alt]="step.title + ' icon'" class="step-icon">
+            <div class="step-text">
+              <h3 class="step-title">{{ step.title }}</h3>
+              <p class="step-description">{{ step.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<section class="benefits-section">
+  <div class="container">
+
+    <h2 class="section-title">BENEFITS</h2>
+
+    <div class="benefits-grid">
+
+      <div class="benefit-item" *ngFor="let benefit of benefits">
+        <img [src]="benefit.iconUrl" [alt]="benefit.title + ' icon'" class="benefit-icon">
+        <h3 class="benefit-title">{{ benefit.title }}</h3>
+        <p class="benefit-description">{{ benefit.description }}</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+<section class="why-choose-section">
+  <div class="container">
+    <div class="two-column-layout">
+
+      <div class="text-column">
+        <h2 class="section-title">Why Choose Yajentio Training Academy?</h2>
+        <p class="description">
+          As a creative-first digital agency, Yajentio Training Academy captures more than just images — we tell stories that connect, inspire, and last. Our photography and videography services are thoughtfully crafted to reflect your brand’s personality or your most important moments, with a focus on detail, emotion, and style. From wedding shoots and candid captures to high-end production and promotional videos, we ensure every frame is intentional and impactful. Whether you’re building a brand or capturing memories, Yajentio Training Academy delivers visuals that go beyond aesthetics — they leave a lasting impression.
+        </p>
+      </div>
+
+      <div class="image-column">
+        <img src="assets/images/services/seo/20250620_1227_Confident-Digital-Marketer_simple_compose_01jy62044hfjp87mdt381kh0dg-Photoroom.png" alt="Yajentio Training Academy mascot working on a laptop">
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">OUR SERVICES</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card" *ngFor="let service of services">
+        <img [src]="service.iconUrl" [alt]="service.title" class="service-icon">
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+
+      <div class="view-all-container">
+        <a routerLink="/services/digitalmarketing" class="btn-view-all">View All Services</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title-faq">FAQ's</h2>
+
+    <div class="faq-grid">
+
+      <div *ngFor="let faq of faqs; let i = index"
+           class="faq-item"
+           [ngClass]="{ 'open': openFaqIndex === i }">
+
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <span>{{ faq.question }}</span>
+          <span class="faq-icon"></span>
+        </div>
+
+        <div class="faq-answer">
+          <p>{{ faq.answer }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta-banner">
+  <div class="cta-container">
+    <span class="cta-text">
+      We are Yajentio Training Academy and we can help you succeed
+    </span>
+
+    <a routerLink="/contact" class="cta-button">
+      Contact Us
+    </a>
+  </div>
+</section>
+<app-footer></app-footer>

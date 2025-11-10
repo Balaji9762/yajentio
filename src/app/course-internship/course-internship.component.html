@@ -1,0 +1,16 @@
+<app-header></app-header>
+<input type="text" [(ngModel)]="courseName" (input)="filterCourses()" placeholder="Search for a course..." />
+
+<div class="course-container">
+  <div class="course-card" *ngFor="let course of filteredCourses">
+    <img [src]="course.image || '../assets/courses/course-card/course-1.jpg'" alt="{{ course.course }}">
+    <span class="category">{{ course.topics }}</span>
+    <h3>{{ course.course }}</h3>
+    <p>{{ course.description }}</p>
+    <div class="footer">
+      <strong>{{ course.instructor || 'Unknown Instructor' }}</strong>
+      <a href="#">Know Details →</a>
+    </div>
+  </div>
+</div>
+
